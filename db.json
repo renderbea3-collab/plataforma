@@ -1,0 +1,355 @@
+{
+  "activities": [
+    {
+      "slug": "documentacao-e-padroes-de-testes",
+      "title": "Atividade 1 — Documentação e Padrões de Testes",
+      "description": "Plano de teste, casos de teste, relatório, rastreabilidade e conformidade (IEEE 829).",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Qual documento é considerado a espinha dorsal da documentação de testes, definindo objetivos, escopo e cronograma?",
+          "options": [
+            "Manual do Usuário",
+            "Plano de Teste",
+            "Relatório de Teste",
+            "Caso de Uso"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 2,
+          "question": "O que os Casos de Teste especificam detalhadamente para a execução da verificação?",
+          "options": [
+            "As diretrizes de marketing do produto final.",
+            "Apenas os custos financeiros do projeto.",
+            "As condições iniciais, os passos e os resultados esperados.",
+            "O perfil e o salário dos desenvolvedores."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 3,
+          "question": "Qual é a principal finalidade do Relatório de Teste?",
+          "options": [
+            "Substituir integralmente o plano de testes inicial.",
+            "Programar as linhas de código do sistema.",
+            "Definir o cronograma de férias da equipe.",
+            "Compilar os resultados dos testes, defeitos encontrados e evidências."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 4,
+          "question": "Qual padrão internacional é recomendado para facilitar a consistência e a integração na documentação de testes?",
+          "options": [
+            "IEEE 829",
+            "ISO 9001",
+            "ISO/IEC 25010",
+            "IEEE 830"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": 5,
+          "question": "O que significa manter a documentação de testes \"enxuta\"?",
+          "options": [
+            "Eliminar completamente os relatórios finais.",
+            "Deixar de registrar os defeitos encontrados.",
+            "Focar nos aspectos mais importantes, evitando redundâncias e informações desnecessárias.",
+            "Reduzir o número de testes executados na aplicação."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 6,
+          "question": "Como a rastreabilidade ajuda no processo de testes de software?",
+          "options": [
+            "Diminuindo a quantidade de bugs gerados pelo compilador.",
+            "Automatizando a criação de códigos fonte.",
+            "Acelerando a velocidade de processamento do computador.",
+            "Conectando cada teste e defeito diretamente aos requisitos originais do projeto."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 7,
+          "question": "O que ocorre se a documentação de testes não for atualizada conforme o software evolui?",
+          "options": [
+            "Nenhuma alteração é perceptível.",
+            "Os requisitos iniciais deixam de existir no sistema.",
+            "A equipe passa a executar testes obsoletos que não refletem a versão atual.",
+            "O software roda mais rápido."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 8,
+          "question": "De acordo com o glossário, o que significa \"Conformidade\" no contexto de testes?",
+          "options": [
+            "Falha lógica irreversível no código fonte.",
+            "Adesão a um padrão, regra ou especificação para verificar se o software atende aos requisitos.",
+            "Desacordo entre o cliente e o programador.",
+            "Incapacidade do sistema de processar dados."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 9,
+          "question": "Por que o registro histórico de testes (presente no relatório) é útil para o futuro?",
+          "options": [
+            "Para cobrar multas dos usuários finais.",
+            "Para servir como base de referência e lições aprendidas em futuros projetos.",
+            "Para substituir o código fonte em caso de perda.",
+            "Para servir exclusivamente como arquivo morto sem utilidade prática."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 10,
+          "question": "Além de ser um requisito formal, como a documentação de testes deve ser encarada pela equipe?",
+          "options": [
+            "Como um relatório financeiro empresarial.",
+            "Como uma ferramenta puramente burocrática e opcional.",
+            "Como um manual de instruções estético para o cliente final.",
+            "Como uma ferramenta estratégica para garantir a entrega de software de alta qualidade."
+          ],
+          "correctIndex": 3
+        }
+      ]
+    },
+    {
+      "slug": "comunicacao-e-relacoes-em-equipes",
+      "title": "Atividade 2 — Comunicação e Relações em Equipes",
+      "description": "Comunicação eficaz, escuta ativa, CNV, stakeholders e inteligência emocional no time de testes.",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Qual é a importância principal de uma comunicação eficaz no desenvolvimento de software?",
+          "options": [
+            "Reduzir o número de profissionais contratados.",
+            "Substituir a necessidade de escrever códigos limpos.",
+            "Prevenir mal-entendidos, evitar retrabalho e garantir alinhamento.",
+            "Aumentar o custo operacional do projeto."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 2,
+          "question": "Quais são os três elementos fundamentais que compõem uma comunicação eficaz?",
+          "options": [
+            "Conteúdo da mensagem, canal utilizado e contexto.",
+            "Hardware, software e rede.",
+            "Linguagem de programação, banco de dados e IDE.",
+            "Salário, cargo e tempo de empresa."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": 3,
+          "question": "O que caracteriza o processo de \"Ouvir Ativamente\"?",
+          "options": [
+            "Apenas escutar o interlocutor sem prestar atenção em detalhes não verbalizados.",
+            "Dar atenção total, compreender a mensagem e responder adequadamente.",
+            "Ignorar feedbacks que contrariem o planejamento inicial.",
+            "Interromper a fala do colega para impor opiniões."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 4,
+          "question": "Qual é o objetivo da técnica de Comunicação Não Violenta (CNV) no ambiente de trabalho?",
+          "options": [
+            "Permitir que os colaboradores discutam de forma ríspida para desabafar.",
+            "Evitar que os testadores reportem bugs críticos.",
+            "Eliminar qualquer tipo de diálogo informal na equipe.",
+            "Expressar necessidades e sentimentos sem causar defensividade ou agressividade."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 5,
+          "question": "O que define os \"Stakeholders\" em um projeto de desenvolvimento de sistemas?",
+          "options": [
+            "Indivíduos ou grupos que têm interesse ou são afetados pelo projeto (clientes, investidores, equipe).",
+            "Apenas os programadores seniores da equipe técnica.",
+            "As ferramentas de automação de código aberto.",
+            "Os computadores e servidores utilizados nos testes."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": 6,
+          "question": "Como equipes multidisciplinares impactam a dinâmica de um projeto de software?",
+          "options": [
+            "Dispensam a necessidade de relatar riscos ou defeitos.",
+            "Reúnem diferentes especialidades que precisam se comunicar com clareza para evitar falhas.",
+            "Causam atrasos permanentes devido à falta de objetivos comuns.",
+            "Tornam o processo de desenvolvimento totalmente independente de documentação."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 7,
+          "question": "O que significa \"Inteligência Emocional\" no contexto profissional?",
+          "options": [
+            "A ausência completa de sentimentos durante o trabalho.",
+            "A capacidade de calcular algoritmos matemáticos complexos mentalmente.",
+            "A habilidade de trabalhar por 24 horas consecutivas sem descanso.",
+            "A capacidade de reconhecer, entender e gerenciar as próprias emoções e as dos outros."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 8,
+          "question": "Por que documentar defeitos e reportar riscos com clareza é essencial?",
+          "options": [
+            "Para retardar a entrega do produto final.",
+            "Para preencher espaço nos arquivos do projeto.",
+            "Para facilitar a correção pelos desenvolvedores e ajudar na priorização de esforços.",
+            "Para punir os membros da equipe que cometeram erros."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 9,
+          "question": "De acordo com o glossário, o que é \"Retrabalho\"?",
+          "options": [
+            "A contratação de novos funcionários para o projeto.",
+            "A automação bem-sucedida de casos de teste.",
+            "O planejamento antecipado das tarefas de uma sprint.",
+            "A necessidade de repetir ou corrigir um trabalho já realizado devido a erros ou falhas iniciais."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 10,
+          "question": "O que deve ser considerado ao escolher um canal de comunicação na equipe?",
+          "options": [
+            "A marca dos computadores utilizados pela equipe.",
+            "A urgência, a formalidade necessária e a clareza requerida pela mensagem.",
+            "Apenas a preferência pessoal do cliente.",
+            "O custo financeiro de envio de e-mails."
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "slug": "papel-do-testador-e-mercado-de-trabalho",
+      "title": "Atividade 3 — Papel do Testador e Mercado de Trabalho",
+      "description": "Perfil do testador, usabilidade, certificação ISTQB, QA e perspectivas de carreira.",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Qual é o papel principal desempenhado pelo testador de software na equipe?",
+          "options": [
+            "Escrever integralmente o código-fonte comercial do sistema.",
+            "Agir como uma ponte de comunicação entre os desenvolvedores e os usuários finais.",
+            "Comercializar o software diretamente com os clientes.",
+            "Substituir o gerente de projetos na tomada de decisões financeiras."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 2,
+          "question": "Por que a curiosidade intelectual é uma característica importante para um testador?",
+          "options": [
+            "Torna o profissional mais rápido na digitação de textos.",
+            "Evita a necessidade de criar casos de teste formais.",
+            "Permite explorar diferentes cenários e antecipar problemas que um usuário comum enfrentaria.",
+            "Ajuda a consertar falhas de hardware no computador."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 3,
+          "question": "Qual é a importância da atenção aos detalhes no trabalho de teste de software?",
+          "options": [
+            "Serve apenas para cumprir burocracias formais sem impacto real.",
+            "Elimina a necessidade de testes de estresse.",
+            "Garante que o design visual seja sempre na cor azul.",
+            "Ajuda a identificar inconsistências mínimas que podem causar falhas críticas de usabilidade e segurança."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 4,
+          "question": "Qual é o objetivo dos testes de usabilidade em um produto digital?",
+          "options": [
+            "Garantir que o software seja intuitivo, fácil de usar e acessível do ponto de vista do usuário final.",
+            "Medir a velocidade de transmissão de pacotes na internet.",
+            "Reduzir o consumo de memória RAM do dispositivo.",
+            "Proteger o sistema contra invasões de hackers maliciosos."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": 5,
+          "question": "O que representa a certificação ISTQB no mercado de testes de software?",
+          "options": [
+            "Um diploma de ensino superior em engenharia civil.",
+            "Uma autorização para realizar auditorias fiscais em empresas.",
+            "Um certificado que comprova competência, conhecimento e compromisso com os padrões profissionais.",
+            "Uma licença obrigatória para operar computadores corporativos."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 6,
+          "question": "Como o mercado de trabalho atual para testadores de software está se comportando?",
+          "options": [
+            "É restrito apenas a grandes corporações multinacionais.",
+            "Não exige qualificações técnicas específicas.",
+            "Está em forte retração devido à extinção da profissão.",
+            "Está em expansão, impulsionado pela crescente complexidade e dependência de produtos digitais."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 7,
+          "question": "De acordo com o glossário, o que significa a sigla QA (Quality Assurance)?",
+          "options": [
+            "Quadro de Apoio aos desenvolvedores juniores.",
+            "Processo sistemático para garantir a qualidade do software através da identificação e correção de defeitos.",
+            "Quantidade Anual de bugs permitidos em um sistema.",
+            "Qualificação Avançada de Algoritmos de Rede."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 8,
+          "question": "O que engloba o conhecimento técnico básico indispensável para um testador?",
+          "options": [
+            "Saber consertar placas-mãe e fontes de alimentação.",
+            "Dominar softwares de edição de vídeo e animação 3D.",
+            "Compreender linguagens de programação, bancos de dados, sistemas operacionais e ferramentas tecnológicas.",
+            "Conhecer técnicas avançadas de contabilidade empresarial."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 9,
+          "question": "Qual é a vantagem de um testador dominar metodologias ágeis?",
+          "options": [
+            "Trabalhar sem prazos definidos ou planejamento de sprints.",
+            "Impedir qualquer mudança nos requisitos do projeto.",
+            "Evitar reuniões de alinhamento com a equipe.",
+            "Adaptar-se a entregas rápidas, flexíveis e contínuas de acordo com as necessidades do cliente."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": 10,
+          "question": "Para onde um profissional de testes pode avançar em sua carreira ao assumir posições de liderança?",
+          "options": [
+            "Para o cargo de Gerente de QA (Quality Assurance), liderando equipes e estratégias de teste.",
+            "Para o cargo exclusivo de operador de suporte técnico básico.",
+            "Para funções administrativas fora da área de tecnologia.",
+            "Para a direção financeira da empresa."
+          ],
+          "correctIndex": 0
+        }
+      ]
+    }
+  ]
+}
