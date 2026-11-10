@@ -28,7 +28,6 @@ async function salvarNoGitHub(conteudo) {
   const branch = process.env.GITHUB_BRANCH || 'main';
 
   try {
-    // Pega o SHA do arquivo atual (obrigatório para atualizar)
     const { data: current } = await axios.get(url, {
       headers: { Authorization: `Bearer ${token}` },
       params: { ref: branch }
@@ -68,13 +67,25 @@ app.get('/api/activities/:slug', (req, res) => {
   res.json(safe);
 });
 
-// Enviar respostas (Corrige e salva no JSON + GitHub)
+// Enviar respostas (Corrige, conta tentativas e salva no JSON + GitHub)
 app.post('/api/results/:slug', async (req, res) => {
   const { studentName, answers } = req.body;
   const db = lerBanco();
   const activity = db.activities.find(a => a.slug === req.params.slug);
   if (!activity) return res.status(404).json({ error: 'Atividade não encontrada' });
 
+  if (!db.results) db.results = [];
+
+  // 1. Conta quantas tentativas esse aluno já fez nessa atividade
+  const tentativas = db.results.filter(
+    r => r.activitySlug === req.params.slug && r.studentName.toLowerCase() === studentName.toLowerCase()
+  ).length;
+
+  if (tentativas >= 3) {
+    return res.status(403).json({ error: 'Você já atingiu o limite de 3 tentativas para esta atividade.' });
+  }
+
+  // 2. Calcula a nota
   let score = 0;
   activity.questions.forEach((q, i) => {
     if (answers[i] === q.correctIndex) score++;
@@ -87,19 +98,21 @@ app.post('/api/results/:slug', async (req, res) => {
     score,
     total: activity.questions.length,
     answers,
+    tentativa: tentativas + 1,
     createdAt: new Date().toISOString()
   };
 
-  if (!db.results) db.results = [];
   db.results.push(novoResultado);
 
-  // Salva localmente
+  // Salva localmente e no GitHub
   fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2));
-  
-  // Salva no GitHub em background (não trava a resposta do aluno)
   salvarNoGitHub(db);
 
-  res.status(201).json({ score, total: activity.questions.length });
+  res.status(201).json({ 
+    score, 
+    total: activity.questions.length, 
+    tentativa: tentativas + 1 
+  });
 });
 
 // ===== Rotas Admin =====
