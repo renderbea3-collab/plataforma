@@ -349,6 +349,125 @@
           ],
           "correctIndex": 0
         }
+
+            {
+      "slug": "avaliacao-e-validacao-de-modelos",
+      "title": "Atividade 4 — Avaliação e Validação de Modelos",
+      "description": "Métricas de desempenho, matriz de confusão, validação cruzada e curvas ROC em Machine Learning.",
+      "active": true,
+      "questions": [
+        {
+          "id": 1,
+          "question": "Qual métrica de classificação é calculada como a razão entre os Verdadeiros Positivos (VP) e a soma dos Verdadeiros Positivos com Falsos Negativos (VP + FN)?",
+          "options": [
+            "Precisão",
+            "Sensibilidade (Recall)",
+            "Especificidade",
+            "Acurácia"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 2,
+          "question": "Em um diagnóstico de doença grave rara, qual tipo de erro deve ser minimizado prioritariamente para evitar que pacientes doentes fiquem sem tratamento?",
+          "options": [
+            "Verdadeiro Negativo",
+            "Falso Positivo (Erro Tipo I)",
+            "Falso Negativo (Erro Tipo II)",
+            "Verdadeiro Positivo"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 3,
+          "question": "A média harmônica entre Precisão e Sensibilidade é conhecida como:",
+          "options": [
+            "F1-Score",
+            "Coeficiente R²",
+            "AUC-ROC",
+            "Média Absoluta"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": 4,
+          "question": "O que representa o eixo X em um gráfico clássico de Curva ROC?",
+          "options": [
+            "Taxa de Verdadeiros Positivos (TPR)",
+            "Taxa de Falsos Positivos (FPR)",
+            "Precisão",
+            "F1-Score"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 5,
+          "question": "Um modelo que apresenta acurácia de 99% no treino e apenas 55% no conjunto de teste está sofrendo de:",
+          "options": [
+            "High Bias (Subajuste)",
+            "Underfitting",
+            "Overfitting (Superajuste)",
+            "Amostragem Perfeita"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 6,
+          "question": "Qual técnica de validação cruzada garante que a proporção das classes seja mantida uniforme em todas as dobras (folds)?",
+          "options": [
+            "Leave-One-Out Cross-Validation",
+            "K-Fold Simples",
+            "Stratified K-Fold",
+            "Hold-out Aleatório"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": 7,
+          "question": "Em problemas de regressão, qual métrica eleva os erros ao quadrado, penalizando fortemente desvios grandes?",
+          "options": [
+            "Erro Médio Absoluto (MAE)",
+            "Erro Quadrático Médio (MSE)",
+            "Acurácia Ajustada",
+            "Taxa de Erro Relativo"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 8,
+          "question": "Um classificador que realiza palpites completamente aleatórios em um problema binário balanceado terá uma AUC-ROC próxima de:",
+          "options": [
+            "1.0",
+            "0.5",
+            "0.0",
+            "-1.0"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": 9,
+          "question": "O que acontece com a Precisão e a Sensibilidade quando aumentamos o limiar (threshold) de decisão de um classificador de 0.5 para 0.8?",
+          "options": [
+            "A Precisão tende a aumentar e a Sensibilidade tende a diminuir.",
+            "Ambos aumentam simultaneamente.",
+            "A Sensibilidade aumenta e a Precisão diminui.",
+            "Nenhuma métrica sofre alteração."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": 10,
+          "question": "Se um modelo possui alto viés (high bias), isso significa tipicamente que:",
+          "options": [
+            "O modelo memorizou perfeitamente os dados de treino.",
+            "O modelo é excessivamente simples para capturar a complexidade dos dados.",
+            "O erro de teste é muito menor que o erro de treino.",
+            "O modelo possui variância extremamente alta."
+          ],
+          "correctIndex": 1
+        }
+      ]
+    }
       ]
     }
   ]
