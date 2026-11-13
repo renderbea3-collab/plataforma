@@ -4,6 +4,7 @@
       "slug": "documentacao-e-padroes-de-testes",
       "title": "Atividade 1 — Documentação e Padrões de Testes",
       "description": "Plano de teste, casos de teste, relatório, rastreabilidade e conformidade (IEEE 829).",
+      "active": true,
       "questions": [
         {
           "id": 1,
@@ -121,6 +122,7 @@
       "slug": "comunicacao-e-relacoes-em-equipes",
       "title": "Atividade 2 — Comunicação e Relações em Equipes",
       "description": "Comunicação eficaz, escuta ativa, CNV, stakeholders e inteligência emocional no time de testes.",
+      "active": true,
       "questions": [
         {
           "id": 1,
@@ -238,6 +240,7 @@
       "slug": "papel-do-testador-e-mercado-de-trabalho",
       "title": "Atividade 3 — Papel do Testador e Mercado de Trabalho",
       "description": "Perfil do testador, usabilidade, certificação ISTQB, QA e perspectivas de carreira.",
+      "active": true,
       "questions": [
         {
           "id": 1,
@@ -349,8 +352,9 @@
           ],
           "correctIndex": 0
         }
-
-            {
+      ]
+    },
+    {
       "slug": "avaliacao-e-validacao-de-modelos",
       "title": "Atividade 4 — Avaliação e Validação de Modelos",
       "description": "Métricas de desempenho, matriz de confusão, validação cruzada e curvas ROC em Machine Learning.",
@@ -468,7 +472,6 @@
         }
       ]
     }
-      ]
-    }
-  ]
+  ],
+  "results": []
 }
