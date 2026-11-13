@@ -34,7 +34,7 @@ async function salvarNoGitHub(conteudo) {
     });
 
     await axios.put(url, {
-      message: 'Atualização automática dos resultados',
+      message: 'Atualização automática do banco de dados',
       content: Buffer.from(JSON.stringify(conteudo, null, 2)).toString('base64'),
       sha: current.sha,
       branch
@@ -47,45 +47,44 @@ async function salvarNoGitHub(conteudo) {
   }
 }
 
-// ===== Rotas =====
+// ===== Rotas Públicas =====
 
-// Listar Atividades (para os cards)
+// Listar Atividades ATIVAS (para os cards)
 app.get('/api/activities', (req, res) => {
   const db = lerBanco();
-  const list = db.activities.map(a => ({ slug: a.slug, title: a.title, description: a.description }));
+  const list = db.activities
+    .filter(a => a.active !== false) // Mostra se for true ou se a chave não existir
+    .map(a => ({ slug: a.slug, title: a.title, description: a.description }));
   res.json(list);
 });
 
-// Pegar uma atividade específica (esconde as respostas corretas)
+// Pegar uma atividade específica
 app.get('/api/activities/:slug', (req, res) => {
   const db = lerBanco();
   const activity = db.activities.find(a => a.slug === req.params.slug);
   if (!activity) return res.status(404).json({ error: 'Atividade não encontrada' });
+  if (activity.active === false) return res.status(403).json({ error: 'Esta atividade está desativada.' });
 
   const safe = { ...activity };
   safe.questions = activity.questions.map(({ correctIndex, ...q }) => q);
   res.json(safe);
 });
 
-// Enviar respostas (Corrige, conta tentativas e salva no JSON + GitHub)
+// Enviar respostas
 app.post('/api/results/:slug', async (req, res) => {
   const { studentName, answers } = req.body;
   const db = lerBanco();
   const activity = db.activities.find(a => a.slug === req.params.slug);
   if (!activity) return res.status(404).json({ error: 'Atividade não encontrada' });
+  if (activity.active === false) return res.status(403).json({ error: 'Esta atividade está desativada.' });
 
   if (!db.results) db.results = [];
-
-  // 1. Conta quantas tentativas esse aluno já fez nessa atividade
   const tentativas = db.results.filter(
     r => r.activitySlug === req.params.slug && r.studentName.toLowerCase() === studentName.toLowerCase()
   ).length;
 
-  if (tentativas >= 3) {
-    return res.status(403).json({ error: 'Você já atingiu o limite de 3 tentativas para esta atividade.' });
-  }
+  if (tentativas >= 3) return res.status(403).json({ error: 'Você já atingiu o limite de 3 tentativas para esta atividade.' });
 
-  // 2. Calcula a nota
   let score = 0;
   activity.questions.forEach((q, i) => {
     if (answers[i] === q.correctIndex) score++;
@@ -103,16 +102,10 @@ app.post('/api/results/:slug', async (req, res) => {
   };
 
   db.results.push(novoResultado);
-
-  // Salva localmente e no GitHub
   fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2));
   salvarNoGitHub(db);
 
-  res.status(201).json({ 
-    score, 
-    total: activity.questions.length, 
-    tentativa: tentativas + 1 
-  });
+  res.status(201).json({ score, total: activity.questions.length, tentativa: tentativas + 1 });
 });
 
 // ===== Rotas Admin =====
@@ -126,6 +119,26 @@ const adminAuth = (req, res, next) => {
 app.post('/api/admin/login', (req, res) => {
   if (req.body.password === process.env.ADMIN_PASSWORD) return res.json({ ok: true });
   return res.status(401).json({ error: 'Senha inválida' });
+});
+
+// Listar todas as atividades (incluindo inativas) para o Admin
+app.get('/api/admin/activities', adminAuth, (req, res) => {
+  const db = lerBanco();
+  res.json(db.activities.map(a => ({ slug: a.slug, title: a.title, active: a.active !== false })));
+});
+
+// Ligar/Desligar uma atividade
+app.patch('/api/admin/activities/:slug/toggle', adminAuth, async (req, res) => {
+  const db = lerBanco();
+  const activity = db.activities.find(a => a.slug === req.params.slug);
+  if (!activity) return res.status(404).json({ error: 'Atividade não encontrada' });
+
+  activity.active = !activity.active;
+  
+  fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2));
+  salvarNoGitHub(db);
+  
+  res.json({ slug: activity.slug, active: activity.active });
 });
 
 app.get('/api/admin/results', adminAuth, (req, res) => {
